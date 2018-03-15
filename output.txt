@@ -37,8 +37,7 @@
 < EOL > : -ENDOFLINE-
 < RIGHT_CURLY_B > : -}-
 < EOL > : -ENDOFLINE-
-< INTEGRAL_LITERAL > : -3-
-< UnknowToken > : -khkjhkj    -
+< UnknowToken > : -3int     -
 < EOL > : -ENDOFLINE-
 < RIGHT_CURLY_B > : -}-
 < SEMICOLON > : -;-
