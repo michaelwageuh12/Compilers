@@ -155,7 +155,13 @@ public class Main {
 		readInputFile();
 		//System.out.println(tokens.size());
 		for(Token token : tokens) {
-			Pattern pattern = Pattern.compile(token.regex, Pattern.DOTALL);
+			Pattern pattern;
+			if(token.name.equals("S_COMMENTS")) {
+				pattern = Pattern.compile(token.regex);
+			}else {
+				pattern = Pattern.compile(token.regex, Pattern.DOTALL);
+			}
+		
 			Matcher matcher = pattern.matcher(targetString);
 			//System.out.println(token.regex);
 			while (matcher.find())

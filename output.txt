@@ -8,10 +8,8 @@
 < INTEGRAL_LITERAL > : -3-
 < SEMICOLON > : -;-
 < EOL > : -ENDOFLINE-
-< UnknowToken > : -// cc  -
-< INTEGRAL_LITERAL > : -3-
-< INTEGRAL_LITERAL > : -1-
-< EOL > : -ENDOFLINE-
+< S_COMMENTS > : -//3cc1
+-
 < STRING > : -String-
 < ID > : -text-
 < ASSIGNMENT > : -=-
@@ -38,6 +36,9 @@
 < SEMICOLON > : -;-
 < EOL > : -ENDOFLINE-
 < RIGHT_CURLY_B > : -}-
+< EOL > : -ENDOFLINE-
+< INTEGRAL_LITERAL > : -3-
+< UnknowToken > : -khkjhkj    -
 < EOL > : -ENDOFLINE-
 < RIGHT_CURLY_B > : -}-
 < SEMICOLON > : -;-

@@ -10,4 +10,5 @@ class class1 {
 	{
 		System.out.println("/*hello*/");	
 	}
+	3khkjhkj
 };
