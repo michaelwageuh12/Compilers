@@ -1,6 +1,8 @@
+import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -26,6 +28,7 @@ public class Main {
 			tokens.add(new Token(arr[0],arr[1]));
 		}
 	}
+	
 	public static void readInputFile() throws FileNotFoundException {
 		String fileAddress="input.txt";
 		Scanner in = new Scanner(new File(fileAddress));
@@ -37,6 +40,7 @@ public class Main {
 		}
 		System.out.println(targetString);
 	}
+	
 	public static void sort() {
 		for(int i=0 ; i<output.size(); i++) {
 			for(int j=i+1 ; j<output.size(); j++) {
@@ -44,27 +48,28 @@ public class Main {
 					int tmp=output.get(i).startIndx;
 					output.get(i).startIndx=output.get(j).startIndx;
 					output.get(j).startIndx=tmp;
-					
+
 					tmp=output.get(i).endIndx;
 					output.get(i).endIndx=output.get(j).endIndx;
 					output.get(j).endIndx=tmp;
-					
+
 					String t=output.get(i).value;
 					output.get(i).value=output.get(j).value;
 					output.get(j).value=t;
-					
+
 					t=output.get(i).token.name;
 					output.get(i).token.name=output.get(j).token.name;
 					output.get(j).token.name=t;
-					
+
 					t=output.get(i).token.regex;
 					output.get(i).token.regex=output.get(j).token.regex;
 					output.get(j).token.regex=t;
-					
+
 				}
 			}
 		}
 	}
+	
 	public static void modify() {
 		for(int i=0 ; i<output.size(); i++) {
 			int startIdx1 = output.get(i).startIndx;
@@ -99,7 +104,17 @@ public class Main {
 			}
 		}
 	}
-	public static void main(String[] args) throws FileNotFoundException {
+	
+	public static void writeOutputToFile() throws IOException{
+		BufferedWriter outfile = new BufferedWriter(new FileWriter("output.txt"));
+		for(Output out : output) {
+			String text = "< "+out.token.name+" > : -"+out.value+"-";
+			outfile.write(text+'\n');
+		}
+		outfile.close();
+	}
+	
+	public static void main(String[] args) throws IOException {
 		initTokens();
 		readInputFile();
 		//System.out.println(tokens.size());
@@ -110,7 +125,7 @@ public class Main {
 			while (matcher.find())
 			{
 				//System.out.println("YES");
-				
+
 				String matcherString = matcher.group();
 				int startIdx=matcher.start();
 				int endIdx=matcher.end();
@@ -118,16 +133,19 @@ public class Main {
 				System.out.println("Found a match: " + matcherString );
 				System.out.println("Start position: " + startIdx);
 				System.out.println("End position: " + endIdx);*/
-				
+
 				output.add(new Output(startIdx,endIdx,matcherString,new Token(token.name,token.regex)));
 			}
 		}
 		modify();
 		sort();
-		for(Output out : output) {
-			//System.out.println(out.startIndx+" "+out.endIndx+" "+out.token.name+" "+out.value);
-			System.out.println("< "+out.token.name+" > : -"+out.value+"-");
-		}
+		writeOutputToFile();
+		
+		//		for(Output out : output) {
+		//			//System.out.println(out.startIndx+" "+out.endIndx+" "+out.token.name+" "+out.value);
+		//			System.out.println("< "+out.token.name+" > : -"+out.value+"-");
+		//		}
+
 		/*
 		  code el lab
 		  String regex = "\\d{1,}\\.\\d{1,}";
