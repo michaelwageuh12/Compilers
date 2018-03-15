@@ -37,6 +37,9 @@ LENGTH \blength\b
 PUBLIC \bpublic\b
 PRIVATE \bprivate\b
 PROTECTED \bprotected\b
+RETURN \breturn\b
+STATIC \bstatic\b
+NEW \bnew\b
 STRING \bString\b
 FLOAT \bfloat\b
 CHARACTER \bchar\b
@@ -53,7 +56,15 @@ CATCH \bcatch
 CONST \bconst\b
 DEFAULT \bdefault\b
 DO \bdo\b
+DOUBLE \bdouble\b
+ENUM \bENUM\b
+FINAL \bfinal\b
+FINALLY \bfinally\b
+FOR \bfor\b
+GOTO \bgoto\b
+IMPLEMENTS \bimplements\b
 IMPORT \bimport\b
+PACKAGE \bpackage\b
 INSTANCEOF \binstanceof\b
 INTERFACE \binterface\b
 SHORT \bshort\b
