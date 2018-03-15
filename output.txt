@@ -8,8 +8,8 @@
 < INTEGRAL_LITERAL > : -3-
 < SEMICOLON > : -;-
 < EOL > : -ENDOFLINE-
+< UnknowToken > : -// cc  -
 < INTEGRAL_LITERAL > : -3-
-< UnknowToken > : -cc  -
 < INTEGRAL_LITERAL > : -1-
 < EOL > : -ENDOFLINE-
 < STRING > : -String-

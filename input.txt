@@ -1,6 +1,6 @@
 class class1 {
 	int value = 3;
-	3cc1
+	//3cc1
 	String text = "int x = 1";
 	/*
 		if (num < 1)

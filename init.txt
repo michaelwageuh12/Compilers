@@ -76,7 +76,7 @@ SYSTEM.OUT.PRINTLN \bSystem.out.println\b
 INTEGRAL_LITERAL \d{1,}
 FLOAT_LITERAL \d{1,}\.\d{1,}
 STRING_LITERAL ".{0,}?"
-S_COMMENTS //.{0,}\\n
+S_COMMENTS \\/\/.+\n
 M_COMMENTS \/\*.{0,}?\*\/
 A_CHAR \'\.\'
 ID \b[A-Za-z_]{1,}[A-Za-z0-9_]{0,}
