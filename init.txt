@@ -73,8 +73,8 @@ SWITCH \bswitch\b
 THROW \bthrow\b
 TRY \btry\b
 SYSTEM.OUT.PRINTLN \bSystem.out.println\b
-INTEGRAL_LITERAL \d{1,}\b
-FLOAT_LITERAL \d{1,}\.\d{1,}\b
+INTEGRAL_LITERAL \b\d{1,}\b
+FLOAT_LITERAL \b\d{1,}\.\d{1,}\b
 STRING_LITERAL ".{0,}?"
 S_COMMENTS \/\/.+\n
 M_COMMENTS \/\*.{0,}?\*\/
